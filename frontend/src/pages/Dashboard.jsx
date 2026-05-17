@@ -35,7 +35,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', minHeight: '100vh', padding: '20px' }}>
+    <div className="dashboard-page">
       <div className="container" style={{ maxWidth: '100%', margin: '0 auto' }}>
         <div className="dashboard-container">
           <div className="dashboard-header">

@@ -13,6 +13,30 @@ body {
   align-items: center;
 }
 
+.login-page,
+.register-page,
+.dashboard-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-page {
+  background-image: url('./assets/ChatGPT Image 17 de mai. de 2026, 10_36_07.png');
+}
+
+.register-page {
+  background-image: url('./assets/ChatGPT Image 17 de mai. de 2026, 10_38_15.png');
+}
+
+.dashboard-page {
+  background-image: url('./assets/ChatGPT Image 17 de mai. de 2026, 10_38_34.png');
+}
+
 .container {
   width: 100%;
   max-width: 450px;
