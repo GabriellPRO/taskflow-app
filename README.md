@@ -163,16 +163,17 @@ This project uses:
 # 📸 Screenshots
 
 ## Login Page
-![Login Page](./https://1drv.ms/i/c/4b74b95e44ee4b2f/IQDkWu9u5akEQ7HJO4_u5hSRAf5LXaOL3gIBP4uhUf_r-00?e=pGnhSW/login.png)
+![Login Page](frontend/src/assets/login-screenshot.png)
+
+---
 
 ## Register Page
-![Register Page](https://1drv.ms/i/c/4b74b95e44ee4b2f/IQC6VaOQJrsSTKtaLrTNddCeAfWqXvZEEPiqzMd8XzErevY?e=IY0qvL/register.png)
+![Register Page](frontend/src/assets/register-screenshot.png)
 
-## Dashboard
-![Dashboard](https://1drv.ms/i/c/4b74b95e44ee4b2f/IQCtmHdP_azCTrgGsesRyZHbAUtTV83D8Z09h0Rt4sJ-lHo?e=3f0XVH/dashboard.png)
+---
 
 ## Task Management
-![Task Management](https://1drv.ms/i/c/4b74b95e44ee4b2f/IQCtmHdP_azCTrgGsesRyZHbAUtTV83D8Z09h0Rt4sJ-lHo?e=bdD755/tasks.png) 
+![Task Management](frontend/src/assets/tasks-screenshot.png)
 
 ---
 
