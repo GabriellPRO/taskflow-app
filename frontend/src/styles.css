@@ -199,6 +199,67 @@ button:active {
   text-decoration: underline;
 }
 
+.form-description {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.success-message {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4CAF50;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.error-message {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid #f44336;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.forgot-password-page,
+.reset-password-page,
+.change-password-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.forgot-password-page {
+  background-image: url('./assets/ChatGPT Image 17 de mai. de 2026, 10_36_07.png');
+}
+
+.reset-password-page {
+  background-image: url('./assets/ChatGPT Image 17 de mai. de 2026, 10_36_07.png');
+}
+
+.change-password-page {
+  background-image: url('./assets/ChatGPT Image 17 de mai. de 2026, 10_38_34.png');
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .dashboard-container {
   background: white;
   border-radius: 10px;
@@ -213,6 +274,18 @@ button:active {
   margin-bottom: 30px;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboard-actions button {
+  width: auto;
+  padding: 10px 20px;
 }
 
 .dashboard-main {

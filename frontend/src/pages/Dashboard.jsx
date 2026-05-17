@@ -41,9 +41,14 @@ const Dashboard = () => {
           <div className="dashboard-main">
             <div className="dashboard-header">
               <h1>Minhas Tarefas</h1>
-              <button style={{ width: 'auto', padding: '10px 20px' }} onClick={() => console.log('Logout')}>
-                Sair
-              </button>
+              <div className="dashboard-actions">
+                <button style={{ width: 'auto', padding: '10px 20px' }} onClick={() => window.location.href = '/change-password'}>
+                  Alterar senha
+                </button>
+                <button style={{ width: 'auto', padding: '10px 20px' }} onClick={() => { localStorage.removeItem('token'); window.location.href = '/login'; }}>
+                  Sair
+                </button>
+              </div>
             </div>
 
             <form onSubmit={handleAddTask} style={{ marginBottom: '30px', paddingBottom: '30px', borderBottom: '2px solid #f0f0f0' }}>
