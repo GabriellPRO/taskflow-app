@@ -2,6 +2,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const { sendEmail } = require('../services/emailService');
 
 // Register
 exports.register = async (req, res) => {
@@ -102,13 +103,23 @@ exports.forgotPassword = async (req, res) => {
     user.resetPasswordExpires = new Date(Date.now() + 3600000);
     await user.save();
 
-    // In production, send email here
     const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
-    console.log(`Reset password link: ${resetUrl}`);
+
+    await sendEmail({
+      to: user.email,
+      subject: 'Recuperação de senha - TaskFlow',
+      text: `Use este link para redefinir sua senha: ${resetUrl}`,
+      html: `
+        <p>Olá ${user.name},</p>
+        <p>Recebemos uma solicitação para redefinir sua senha.</p>
+        <p>Clique no link abaixo para criar uma nova senha:</p>
+        <p><a href="${resetUrl}">Redefinir senha</a></p>
+        <p>Se você não solicitou essa troca, ignore este email.</p>
+      `,
+    });
 
     res.status(200).json({
       message: 'Password reset link sent to your email',
-      resetToken, // Remove this in production
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
