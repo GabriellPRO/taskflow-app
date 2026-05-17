@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
 import '../styles.css';
+import { authAPI } from '../services/api';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login:', { email, password });
+    setLoading(true);
+    try {
+      const response = await authAPI.login({ email, password });
+      localStorage.setItem('token', response.data.token);
+      window.location.href = '/dashboard';
+    } catch (error) {
+      alert('Erro ao fazer login: ' + (error.response?.data?.message || error.message));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

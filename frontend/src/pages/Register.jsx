@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 import '../styles.css';
+import { authAPI } from '../services/api';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert('As senhas não correspondem!');
       return;
     }
-    console.log('Register:', { name, email, password });
+    setLoading(true);
+    try {
+      const response = await authAPI.register({ name, email, password });
+      localStorage.setItem('token', response.data.token);
+      window.location.href = '/dashboard';
+    } catch (error) {
+      alert('Erro ao registrar: ' + (error.response?.data?.message || error.message));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
