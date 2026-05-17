@@ -28,10 +28,11 @@ const Register = () => {
   };
 
   return (
-    <div className="container register-page">
-      <div className="card">
-        <h1>Registrar</h1>
-        <form onSubmit={handleSubmit}>
+    <div className="register-page">
+      <div className="container">
+        <div className="card">
+          <h1>Registrar</h1>
+          <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Nome Completo</label>
             <input
@@ -77,9 +78,10 @@ const Register = () => {
             />
           </div>
           <button type="submit">Registrar</button>
-        </form>
-        <div className="link-text">
-          Já tem conta? <a href="/login">Faça login</a>
+          </form>
+          <div className="link-text">
+            Já tem conta? <a href="/login">Faça login</a>
+          </div>
         </div>
       </div>
     </div>

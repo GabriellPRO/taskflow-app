@@ -22,10 +22,11 @@ const Login = () => {
   };
 
   return (
-    <div className="container login-page">
-      <div className="card">
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
+    <div className="login-page">
+      <div className="container">
+        <div className="card">
+          <h1>Login</h1>
+          <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -49,9 +50,10 @@ const Login = () => {
             />
           </div>
           <button type="submit">Entrar</button>
-        </form>
-        <div className="link-text">
-          Não tem conta? <a href="/register">Registre-se</a>
+          </form>
+          <div className="link-text">
+            Não tem conta? <a href="/register">Registre-se</a>
+          </div>
         </div>
       </div>
     </div>
